@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Ink Master",
+    "image": "app/shared/images/18565.jpg",
+    "network": "Spike",
+    "link": "http://www.tvmaze.com/shows/1321/ink-master"
+  },
+  {
+    "name": "Face Off",
+    "image": "app/shared/images/4794.jpg",
+    "network": "SyFy",
+    "link": "http://www.tvmaze.com/shows/278/face-off"
+  },
+  {
+    "name": "Naked and Afraid",
+    "image": "app/shared/images/15171.jpg",
+    "network": "Discovery",
+    "link": "http://www.tvmaze.com/shows/747/naked-and-afraid"
+  },
+  {
+    "name": "Professional Poker Tour",
+    "image": "app/shared/images/73933.jpg",
+    "network": "TLC",
+    "link": "http://www.tvmaze.com/shows/8141/professional-poker-tour"
+  },
+  {
+    "name": "Shark Tank",
+    "image": "app/shared/images/5297.jpg",
+    "network": "ABC",
+    "link": "http://www.tvmaze.com/shows/329/shark-tank"
+  },
+  {
+    "name": "Family Guy",
+    "image": "app/shared/images/641.jpg",
+    "network": "FOX",
+    "link": "http://www.tvmaze.com/shows/84/family-guy"
+  },
+  {
+    "name": "South Park",
+    "image": "app/shared/images/935.jpg",
+    "network": "Comedy Central",
+    "link": "http://www.tvmaze.com/shows/112/south-park"
+  },
+  {
+    "name": "Battle Bots",
+    "image": "app/shared/images/30581.jpg",
+    "network": "ABC",
+    "link": "http://www.tvmaze.com/shows/2203/battlebots"
+  }
+]

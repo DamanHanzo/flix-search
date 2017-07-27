@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+    <!-- Content -->
+    <div id="welcome-shows" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators in Image -->
+      <ol class="carousel-indicators">
+        <li data-target="#welcome-shows"
+           *ngFor="let slide of slides; let first=first; let i=index"
+            [attr.data-slide-to]="i"
+            [ngClass]="{active: first}">
+        </li>
+      </ol>
+
+        <!-- Image -->
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item"
+                   *ngFor="let slide of slides; let first=first"
+                   [ngClass]="{active: first}">
+            <tv-carousel-image [slide]="slide"></tv-carousel-image>
+          </div>
+        </div>
+      </div>
+
+    <!-- Previous/Next controls -->
+      <a class="left carousel-control"
+        data-target="#welcome-shows"
+        role="button"
+        data-slide="prev">
+    <span class="icon-prev" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control"
+          data-target="#welcome-shows"
+          role="button"
+          data-slide="next">
+      <span class="icon-next" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
+    </div> <!-- end col-md-12 -->
+  </div> <!-- end row -->
+</div>

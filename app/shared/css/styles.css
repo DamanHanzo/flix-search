@@ -1,0 +1,97 @@
+/* Animating the routes */
+/*mt-app div {
+    animation-duration: .5s;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+    transition: transform .5s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}*/
+
+/*remove grey background from carousel*/
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+html, body {
+    margin:0;
+    padding:0;
+}
+a:hover {
+    cursor: pointer;
+}
+.carousel {
+    margin-bottom: 12px;
+}
+.footer {
+    padding-top: 5px;
+    background-color: #f5f5f5;
+}
+.media-object {
+  max-width: 200px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.media,
+.media-body {
+    overflow: hidden;
+    zoom: 1
+}
+.media-heading {
+    margin: 0 0 5px
+}
+.episode {
+  border-left: 5px solid #111;
+  padding-left: 10px;
+}
+.panel {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+}
+.panel-body {
+    padding: 15px
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px
+}
+.panel-default>.panel-heading {
+    color: #444;
+    border-color: #cfd9db;
+    font-weight: 700;
+    font-size: 85%;
+    text-transform: uppercase;
+    background-color: #f6f6f6
+}
+.panel-default,
+.well blockquote {
+    border-color: #ddd
+}
+
+/* Spinner */
+.loader {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 16px solid #E1E9E9;
+    border-top: 16px solid #166AB8;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

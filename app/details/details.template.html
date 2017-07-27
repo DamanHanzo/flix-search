@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="panel panel-default" *ngIf="details">
+    <div class="panel-body">
+      <div class="media">
+        <div class="pull-left">
+          <img class="media-object img-rounded"
+          [src]="details?.image.original">
+          <div class="text-center">
+          </div>
+        </div>
+        <div class="media-body">
+          <h1 class="media-heading">
+            {{ details?. name }}
+            <span class="pull-right text-danger"><i class="fa fa-star" aria-hidden="true"></i>
+            {{ details?.rating.average }}
+            </span>
+          </h1><br>
+          <h4>Status: <span [ngClass]="{'bg-success text-white': details?.status === 'Running', 'bg-danger': details?.status !== 'Running'}">
+          {{ details?.status }}
+          </span></h4>
+          <h4 *ngIf="details?.status === 'Running'">Tune in:
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <span class="text-primary">{{ details?.schedule.days }} </span>on
+            <span class="text-success">{{ details?.network.name}} </span>
+          </h4>
+          <p [innerHtml]="details?.summary"></p><br>
+          <h5>
+            Premiered on: <span class="text-warning">{{ details?.premiered | date: 'mediumDate' }} </span>
+          </h5>
+          <br>
+          <p>See more of <em>{{ details?.name }} </em> on <a target="_blank" [href]="details?.url">TVMaze.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loader -->
+  <div class="loader" *ngIf="isLoading"></div>
+
+  <!-- Error Message -->
+  <div class="alert alert-danger" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <br>
+  <div class="panel panel-default" *ngIf="episodes && episodes.length">
+    <div class="panel-heading">
+      <i class="fa fa-film" aria-hidden="true"></i> Episodes
+    </div>
+    <div class="panel-body">
+      <div class="episode" *ngFor="let episode of episodes">
+        <h4>{{ episode.name }}
+        <small>Season {{ episode.season }}, Episode {{ episode.number }}</small>
+        </h4>
+        <p>
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+            {{ episode.airstamp | date:'shortDate' }}
+        </p>
+        <p [innerHtml]="episode.summary"></p>
+      </div>
+    </div>
+  </div>
+</div>

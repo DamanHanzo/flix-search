@@ -1,0 +1,69 @@
+  <div class="container">
+    <div class="row"><br>
+      <h1 class="col-md-6">Find shows</h1>
+          <form (ngSubmit)="searchShows(searchForm)"
+                      [formGroup]="searchForm">
+      <div class="input-group">
+        <input type="search" class="form-control" formControlName="query">
+        <span class="input-group-btn">
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!searchForm.valid">
+            Search
+           </button>
+        </span>
+      </div>
+    </form>
+    </div>
+    <br>
+
+    <!-- Loader -->
+    <div class="loader" *ngIf="isLoading"></div>
+
+    <!-- Error Message -->
+    <div class="alert alert-danger" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+    <!-- No shows found -->
+    <div class="alert alert-danger"
+            [hidden]="!errorMessage && (!shows || shows.length > 0)">
+          No TV shows found with this name
+    </div>
+
+    <!-- Show table -->
+    <table class="table table-bordered table-hover table-fixed-header" *ngIf="shows">
+      <thead>
+        <tr>
+          <th class="text-center">Name</th>
+          <th class="text-center">Image</th>
+          <th class="text-center">Network</th>
+          <th class="text-center">Summary</th>
+          <th class="text-center">Status</th>
+        </tr>
+      </thead>
+        <tbody>
+        <tr *ngFor="let s of shows">
+          <td>
+            <h5>
+              <a [routerLink]="['/details', s.show.name, s.show.id]">
+                {{ s.show.name }}
+                </a>
+              </h5>
+            </td>
+          <td>
+            <img [src]="s.show.image?.medium">
+          </td>
+          <td>{{ s.show.network?.name }}</td>
+          <!-- get back HTML, so need to bind to innerHtml -->
+          <td [innerHtml]="s.show.summary"></td>
+          <td>
+            <h5>
+            <span [ngClass]="{'bg-success text-white': s.show.status === 'Running', 'bg-danger': s.show.status !== 'Running'}">
+              {{ s.show.status }}
+             </span>
+             </h5>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
