@@ -31,7 +31,8 @@ export class DetailsComponent implements OnInit {
 
 	getShowDetails(id: number, show: string){
 		this.isLoading = true;
-		this._detailsService.getShowDetails(id, show)
+		this._detailsService
+			.getShowDetails(id, show)
 			.subscribe(
 				results => {
 					console.log(results);

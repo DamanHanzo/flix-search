@@ -24,10 +24,9 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 export class SearchBarComponent {
   searchForm: FormGroup;
-
   constructor(private _fb: FormBuilder,
-                        private _router: Router,
-                        private _navService: NavService) { }
+              private _router: Router,
+              private _navService: NavService) { }
 
   ngOnInit() {
     this.searchForm = this._fb.group({

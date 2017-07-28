@@ -16,7 +16,7 @@
             </span>
           </h1><br>
           <h4>Status: <span [ngClass]="{'bg-success text-white': details?.status === 'Running', 'bg-danger': details?.status !== 'Running'}">
-          {{ details?.status }}
+           {{ details?.status }} 
           </span></h4>
           <h4 *ngIf="details?.status === 'Running'">Tune in:
             <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -48,11 +48,11 @@
     <div class="panel-body">
       <div class="episode" *ngFor="let episode of episodes">
         <h4>{{ episode.name }}
-        <small>Season {{ episode.season }}, Episode {{ episode.number }}</small>
+          <small>Season {{ episode.season }}, Episode {{ episode.number }}</small>
         </h4>
         <p>
           <i class="fa fa-clock-o" aria-hidden="true"></i>
-            {{ episode.airstamp | date:'shortDate' }}
+              {{ episode.airstamp | date:'shortDate' }}
         </p>
         <p [innerHtml]="episode.summary"></p>
       </div>

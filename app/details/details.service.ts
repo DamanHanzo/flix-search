@@ -19,10 +19,10 @@ export class DetailsService {
 
     getShowInfo(show: string): Observable<Details> {
     return this._http
-                      .get(`${this.tvMazeURL}/singlesearch/shows?q=${show}`)
-                      .map((response: Response) => <Details> response.json())
-                      .do(data => console.log(data))
-                      .catch(this.handleError);
+                .get(`${this.tvMazeURL}/singlesearch/shows?q=${show}`)
+                .map((response: Response) => <Details> response.json())
+                .do(data => console.log(data))
+                .catch(this.handleError);
   }
 
     getEpisodes(id: number): Observable<Episodes[]> {

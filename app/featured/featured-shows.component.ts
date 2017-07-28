@@ -20,13 +20,15 @@ export class FeaturedShowsComponent implements OnInit {
   }
 
   getFeaturedShows() {
-    this._featureService.featuredShows()
-           .subscribe(
-              (shows: Featured[]) => {
+    this._featureService
+            .featuredShows()
+            .subscribe(
+              (shows: Featured[]) =>
+              {
                 console.log(shows);
                 this.shows = shows;
               },
-              error => this.errorMessage = <any>error
+                error => this.errorMessage = <any>error
              );
   }
 

@@ -19,8 +19,8 @@ export class SearchComponent implements OnInit, OnDestroy {
   errorMessage: string;
 
   constructor(private _fb: FormBuilder,
-                        private _searchService: SearchService,
-                        private _navService: NavService) { }
+              private _searchService: SearchService,
+              private _navService: NavService) { }
 
   ngOnInit() {
     this.getQuery();
@@ -66,7 +66,7 @@ export class SearchComponent implements OnInit, OnDestroy {
             this.isLoading = false;
             this.shows = shows;
           },
-          error => this.errorMessage = <any> error
+            error => this.errorMessage = <any> error
           );
   }
 

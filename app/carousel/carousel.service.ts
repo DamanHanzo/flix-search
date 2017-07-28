@@ -11,10 +11,10 @@ export class CarouselService {
 
   featured(): Observable<Carousel[]> {
     return this._http
-                      .get(this.caroselUrl)
-                      .map((response: Response) => <Carousel[]> response.json())
-                      .do(data => console.log(data))
-                      .catch(this.handleError);
+                .get(this.caroselUrl)
+                .map((response: Response) => <Carousel[]> response.json())
+                .do(data => console.log(data))
+                .catch(this.handleError);
   }
 
   private handleError(error: Response) {
